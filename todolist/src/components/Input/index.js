@@ -10,12 +10,16 @@ const Input = ({ todos, setTodos }) => {
 
 	const handleSubmitTodo = () => {
 		const newTodos = [...todos];
-		newTodos.push({
-			title: input,
-			isActive: false,
-		});
-		setTodos(newTodos);
-		setInput('');
+		if (input === '') {
+			alert('please provide you todo item');
+		} else {
+			newTodos.push({
+				title: input,
+				isActive: false,
+			});
+			setTodos(newTodos);
+			setInput('');
+		}
 	};
 
 	return (
